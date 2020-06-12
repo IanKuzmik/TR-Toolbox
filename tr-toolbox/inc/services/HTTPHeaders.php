@@ -13,13 +13,17 @@ class HTTPHeaders {
   }
 
   public function get_headers() {
-  	header( 'Content-Security-Policy: '   .get_option('content-security-policy') );
-  	header( 'X-Content-Type-Options: '		.get_option('x-content-type-options') );
-  	header( 'Referrer-Policy: ' 					.get_option('referrer-policy') );
-  	header( 'Strict-Transport-Security: ' .get_option('strict-transport-security') );
-  	header( 'Timing-Allow-Origin: '				.get_option('timing-allow-origin') );
-  	if ( get_option('remove-expires') == 1 ) header_remove('Expires');
+    $headers = array(
+      'Content-Security-Policy: '   => sanitize_text_field( get_option('tr-content-security-policy') ),
+      'X-Content-Type-Options: '    => sanitize_text_field( get_option('tr-x-content-type-options') ),
+      'Referrer-Policy: '           => sanitize_text_field( get_option('tr-referrer-policy') ),
+      'Strict-Transport-Security: ' => sanitize_text_field( get_option('tr-strict-transport-security') ),
+      'Timing-Allow-Origin: '       => sanitize_text_field( get_option('tr-timing-allow-origin') ),
+    );
+    foreach ( $headers as $header => $option ) {
+      if ( !empty($option) ) header( $header.$option );
+    }
+  	if ( get_option('tr-remove-expires') == 1 ) header_remove('Expires');
   }
-
 
 }

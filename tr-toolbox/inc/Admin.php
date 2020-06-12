@@ -73,27 +73,27 @@ class Admin {
     $args = array (
       [
         'option_group' => 'tr-security-option-group',
-        'option_name'  => 'content-security-policy'
+        'option_name'  => 'tr-content-security-policy'
       ],
       [
         'option_group' => 'tr-security-option-group',
-        'option_name'  => 'x-content-type-options'
+        'option_name'  => 'tr-x-content-type-options'
       ],
       [
         'option_group' => 'tr-security-option-group',
-        'option_name'  => 'referrer-policy'
+        'option_name'  => 'tr-referrer-policy'
       ],
       [
         'option_group' => 'tr-security-option-group',
-        'option_name'  => 'strict-transport-security'
+        'option_name'  => 'tr-strict-transport-security'
       ],
       [
         'option_group' => 'tr-security-option-group',
-        'option_name'  => 'timing-allow-origin'
+        'option_name'  => 'tr-timing-allow-origin'
       ],
       [
         'option_group' => 'tr-security-option-group',
-        'option_name'  => 'remove-expires'
+        'option_name'  => 'tr-remove-expires'
       ]
     );
     return $args;

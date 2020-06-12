@@ -18,7 +18,7 @@ class Enqueue extends BaseController {
   }
 
   public function admin_enqueue() {
-    wp_enqueue_style( 'tr-toolbox-admin-style', $this->plugin_url . 'assets/tr-toolbox.admin.css' );
+    //wp_enqueue_style( 'tr-toolbox-admin-style', $this->plugin_url . 'assets/tr-toolbox.admin.css' );
     wp_enqueue_script( 'tr-toolbox-admin-script', $this->plugin_url . 'assets/tr-toolbox.admin.js', array(), '1.0.0', 'true' );
   }
 

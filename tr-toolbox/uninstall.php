@@ -13,13 +13,13 @@ if ( ! defined('WP_UNINSTALL_PLUGIN') ) {
 
 // delete saved options
 $options = array(
-  'content-security-policy',
-  'x-content-type-options',
-  'referrer-policy',
-  'strict-transport-security',
-  'timing-allow-origin',
-  'remove-expires'
+  'tr-content-security-policy',
+  'tr-x-content-type-options',
+  'tr-referrer-policy',
+  'tr-strict-transport-security',
+  'tr-timing-allow-origin',
+  'tr-remove-expires'
 );
-foreach ($options as $option) {
-	if (get_option($option)) delete_option($option);
+foreach ( $options as $option ) {
+	if ( get_option($option) ) delete_option($option);
 }

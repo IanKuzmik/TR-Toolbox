@@ -27,33 +27,33 @@ class AdminCallbacks {
 
   /* SECURITY HEADERS */
   public function content_security_policy_field() {
-    $setting = 'content-security-policy';
-    $value = get_option( $setting, '' );
+    $setting = 'tr-content-security-policy';
+    $value = sanitize_text_field( get_option( $setting, '' ) );
     echo '<textarea class="widefat tr-http-header-field" id="'.$setting.'" name="'.$setting.'" disabled>'.$value.'</textarea>';
   }
   public function x_content_type_options_field() {
-    $setting = 'x-content-type-options';
-    $value = get_option( $setting, '' );
+    $setting = 'tr-x-content-type-options';
+    $value = sanitize_text_field( get_option( $setting, '' ) );
     echo '<input class="widefat tr-http-header-field" type="text" id="'.$setting.'" name="'.$setting.'" value="'.$value.'" disabled>';
   }
   public function referrer_policy_field() {
-    $setting = 'referrer-policy';
-    $value = get_option( $setting, '' );
+    $setting = 'tr-referrer-policy';
+    $value = sanitize_text_field( get_option( $setting, '' ) );
     echo '<input class="widefat tr-http-header-field" type="text" id="'.$setting.'" name="'.$setting.'" value="'.$value.'" disabled>';
   }
   public function strict_transport_security_field() {
-    $setting = 'strict-transport-security';
-    $value = get_option( $setting, '' );
+    $setting = 'tr-strict-transport-security';
+    $value = sanitize_text_field( get_option( $setting, '' ) );
     echo '<input class="widefat tr-http-header-field" type="text" id="'.$setting.'" name="'.$setting.'" value="'.$value.'" disabled>';
   }
   public function timing_allow_origin_field() {
-    $setting = 'timing-allow-origin';
-    $value = get_option( $setting, '' );
+    $setting = 'tr-timing-allow-origin';
+    $value = sanitize_text_field( get_option( $setting, '' ) );
     echo '<input class="widefat tr-http-header-field" type="text" id="'.$setting.'" name="'.$setting.'" value="'.$value.'" disabled>';
   }
   public function remove_expires_field() {
-    $setting = 'remove-expires';
-    $value = get_option( $setting, '' );
+    $setting = 'tr-remove-expires';
+    $value = get_option( $setting, '' ) ;
     $checked = checked( 1, get_option($setting), false);
     echo '<input class="widefat tr-http-header-field" type="checkbox" id="'.$setting.'" name="'.$setting.'" value="1" '.$checked.' disabled>';
   }
